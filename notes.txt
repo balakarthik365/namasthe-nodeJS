@@ -1,0 +1,88 @@
+NODE JS - Let's get started.
+------------------------------------------------------------------------
+16-02-2026
+-----------------------**Run JS every where**---------------------------
+Node JS is a cross platform, open-source javascript runtime built on chrome's v8 javascript engine.
+Node JS helps to run javascript outside the web browser.
+Node JS has event-driven architecture.
+We can write JS at server side.
+Capable of asynchronous I/O. also known as non-blocking I/O.
+
+->Open JS foundation is a committee which works and maintains on Node JS.
+->Ryan Dahl developed Node JS in 2009!!
+------------------------------------------------------------------------
+History of Node JS - 
+In 2009, Node JS was developed by Ryan Dahl.
+Where ever there is a JS there will be a JS engine.
+Initially spider monkey(firefox) JS engine was used to write the Node JS. 
+later, chrome's v8 was used to develop the Node JS.
+
+Joyent - was company that trying to build similar kind of platform and offered Ryan to continue his work in their company and funded him.
+Today, for the existence of Node JS Joyent has a big hand.
+
+Earlier the name was Web JS, because this was meant to create web servers. Later, it was so powerful that not only create web servers but also other features.
+
+Apache servers were blocking servers. Ryan want to build non-blocking servers so the focus was more for non-blocking.
+
+In 2010, NPM was developed by Issac. NPM is a central registry of all packages that are used in the Node JS application.(Supported by only MacOS and Linux)
+
+In 2011, it got windows support. making it much more accessible for bigger community.
+
+In 2012, Ryan left the project. and was hand overed to the Issac(creator of NPM).
+
+In 2014, Fedor a developer created a fork called io.js. now, joyent was maintaining Node JS and Fedor was maintaining io.js
+
+In 2015, A Node JS foundation was formed and both io.js and Node JS was merged. The Node JS officially announced into the world.
+
+In 2019, Node JS foundation and JS foundation merged to gether and formed a new committee as Open JS foundation.
+
+------------------------------------------------------------------------
+19-02-2026
+Node JS - JS on server.
+Server - A server means a remote CPU located somewhere.
+Now, as we know JS runs only on browser. and after Node JS, JS can be written on server to. Now, this combination of JS writing in Client and Server side the person can be a full stack developer.
+Node JS has C++ code and v8 was written in C++.
+V8 is googles open source platform. V8 can be embedded into any C++ application.
+Job of V8 engine is to execute the JS. Now, JS converts JS to machine code.
+
+ECMA script -  A standard JS language. JS engines need to follow the standards of ECMA script.
+
+Now, the Node JS gives the power to run JS on server and we can create the API's.
+------------------------------------------------------------------------
+Let's write the code.
+To write the Node JS code. 
+1. Install Node JS. Use all the commands in package manager/ download the package. make sure to select proper configurations. Along with Node NPM is also installed with Node JS.
+   Node repl - It says, Read, Evaluate, Print, Loop this will read the code evaluate it then print and loop it.
+2.create repository and write the code.
+global object - gives some features to work on node applications. like timeouts, fetch, intervals and many more
+
+Modules - A separate node js application.
+require - will import the file that needs to run in main file.
+To access the variables, methods and functions from other modules we need to export them using module.exports and import using the require().because they are protected from leaking.
+common JS module - 
+we use module.exports and require. 
+synchronous
+older way to write code
+runs in non-strict mode
+ES module - 
+we use export default fn and import {} from abc.js
+Asynchronous
+newest and standard way to write code.
+runs in strict mode by default
+------------------------------------------------------------------------
+18-02-2026
+If you wrap something inside the function it will be in its private space. Modules works similarly and can be accessed by module.exports or export default function.
+IIFE - 
+It Immediately Invoke the Function Execution.
+It keeps the variables and functions safe, independent and private
+when you require a module into other module the IIFE is executed
+
+steps how require("path") works
+1. Resolving the module. This will check if path is node_module/.js/.json
+2. Loading the module. according to file type it loads the data
+3. Compile the module. Wraps code inside an IIFE.
+4. Code evaluation. module.exports happens
+5. caching - Module that is returned is cached. Which means the code for require will run only once even when it is used in multiple files.
+
+Any code is written using Node JS will be wrapped into IIFE and then passed into V8 engine.
+

@@ -1,0 +1,62 @@
+<mxfile host="65bd71144e">
+    <diagram id="D2vW9aYVutGHXCXdbhPe" name="Page-1">
+        <mxGraphModel dx="835" dy="469" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="5" value="&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;span&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;Server&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;" style="html=1;whiteSpace=wrap;shape=isoCube2;backgroundOutline=1;isoAngle=15;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="400" y="250" width="115" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" style="edgeStyle=none;html=1;fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="8" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="shape=ext;double=1;rounded=1;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="60" y="255" width="200" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="&lt;span style=&quot;color: rgb(0, 0, 0);&quot;&gt;google.com&lt;/span&gt;" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="110" y="275" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="shape=sumEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="197" y="281" width="8" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" style="edgeStyle=none;html=1;fontStyle=1" edge="1" parent="1" source="16">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="260" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="JS runs only on browser" style="shape=ext;double=1;rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="110" y="295" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="&lt;span&gt;Client&lt;/span&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="80" y="305" width="15" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="request" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="300" y="280" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" style="edgeStyle=none;html=1;fontStyle=1" edge="1" parent="1" source="24" target="27">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="320" y="460" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="24" value="&lt;span&gt;Now, after Node JS, JS can run on servers&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="400" y="390" width="112.5" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="Now, a single developer can be a fullstack with help of Node JS&lt;span style=&quot;color: rgb(63, 63, 63); background-color: transparent;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="250" y="430" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="&lt;b&gt;NODE JS has C++ code and v8 was written in C++&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="210" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="30" target="31">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="V8 engine" style="triangle;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="120" y="580" width="80" height="92" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="converts JS code into machine code" style="whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+                    <mxGeometry x="250" y="590" width="120" height="72" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
