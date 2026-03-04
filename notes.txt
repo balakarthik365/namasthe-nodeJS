@@ -86,3 +86,101 @@ steps how require("path") works
 
 Any code is written using Node JS will be wrapped into IIFE and then passed into V8 engine.
 
+------------------------------------------------------------------------
+20-02-2026
+Node JS has a event driven architecture capable of asynchronous I/O
+
+JS -> Is a synchronous single threaded language. We need JS engine(V8, a thread) to run the JS code. Runs synchronously!
+
+Synchronous - 
+Asynchronous - 
+------------------------------------------------------------------------
+24-02-2026
+Node JS has a event driven architecture capable of asynchronous I/O
+
+JS -> Is a synchronous single threaded language. We need JS engine(V8, runs on a thread) to run the JS code. Runs synchronously!
+Diff b/w synchronous and asynchronous:
+Synchronous - synchronous code executes in a sequential manner, meaning that each operation must complete before the next one begins. 
+              This can lead to blocking behavior, where the program waits for a task to finish before moving on to the next one.
+Asynchronous - async code is non-blocking, it allows other code to run while waiting for an operation to complete. 
+               It typically uses callbacks, promises, or async/await to handle the completion of tasks. 
+               In contrast, synchronous code executes sequentially, blocking the execution of subsequent code until the current operation finishes.
+
+JS is synchronous but in Node JS with power of Node it is asynchronous.
+
+Node JS helps to do file operations, DB operations, HTTP network calls, timers and many more.
+
+This operations are done by a library in Node JS. which is called libuv.
+
+Node JS V8 -> libuv -> OS -> libuv -> v8 -> Node JS
+
+v8 off loads to libuv whenever any OS, DB, HTTP, Timer operations happens.
+
+libuv(A peace of C code) - it makes the asynchrounous I/O tasks made simple. It has event loop, thread pool and many queues.
+
+Node JS has two major things V8 + libuv
+
+v8 is main thread and libuv handles other os operations.
+
+V8 engine 
+------------------------------------------------------------------------
+02-03-2026
+Synchronous calls always block the main thread though the task offloaded to libuv.
+Asynchronous calls will never block the main thread.
+pbkdf2(Password base key derivative function) - password generation with itterations
+
+setTimeout with 0. is also async operation. so once sync lines executed and later this timeouts handovered to libuv then they run after libuv process them
+
+Trust issues with setTimeout: It executes after given seconds but only when the call stack is empty.
+
+if setTimeouts are added when main thread is blocked then it will run only when main thread is released.
+
+Node JS is popular because it handles lot of things with one thread.
+------------------------------------------------------------------------
+04-03-2026
+Google's V8 Engine:
+2 type of languages - Interpretted and Compiled languages. 
+                      In Interpreted language there is an interpretter which reads the code line by line. It executes fast initially.
+                      In Compiled language. the code(high level language) is converted into Machine code then the machine code is executed. initially heavy but executed fast
+JS - It is an other type of language is JS, It is not inpreted language or compiler language. It works with both compiler and interpretter.
+Compilation is done by JIT(Just in time compilation). So JS has both compiler and interpretter.
+
+When we run code what happens?
+V8 Architecture
+Parsing:
+   1. Lexical analysis(Tokenization) happens - The code will be breaken down into lexical tokens. Code is read as token by token
+         Ex: var a = 10; //here var, a, =, 10 are tokens.
+   2. Syntax analysis - An abstract syntax tree(AST) is developed. This is known as parsing. It will throw an error when proper syntax is not written.
+   3. AST - 
+         The tokens are converted to An abstract syntax tree(AST)
+   4. Interpretter(Ignition Interpretter) - 
+         AST code is passed to interpretter(Ignition Interpretter - this will convert the AST into byte code) where code is read line by line.        
+   5. Compiler(Turbofan Compiler) - crank shaft is the earlier compiler that is used. but later, removed in latest engines.
+         If code has a repeated code lines, and if there is a chance to optimize that code. 
+         This is called Hot code. 
+         The Hot code is given to Turbofan compiler. this will convert this code into optimized machine code.
+         Sometimes the compiler may also deoptimize the code. when compiler dont understand to optimize
+   6. Execution - 
+            Now, the byte code and optimized machine code is finally executed.
+   7. Garbage collection(Orinoco, OilPan, Scavenger, MCompact) mark and sweep algorithm - 
+         This happens parallelly to move unused code to garbage collection
+ This whole thing is known as JIT compilation. Now, JS is super fast. 
+
+libuv and Event Loop:
+In libuv - we have an 
+   1. Event loop -
+         Usually async tasks are offloaded to libuv. Async and non blocking I/O can be done using the libuv.
+         Eventloop is available in libuv - 
+         EL manages callback queue/ event queue.
+         EL checks the V8 callstack and send the callback queue operations to executes, once the stack is free and main thread is not occupied.
+      This EL has phases like 
+         process.nextTick() and promise callbacks are checked first before each cycle.
+         1. timer - setTimeouts and setIntervals executed in this phase. It proitizes times
+         2. poll - I/O callbacks like fs, crypto, HTTP, Incoming connections, data all this call backs executed here. 
+                  most of callbacks exeuted here
+         3. check - setImmediate also takes a callback
+         4. close - socket ("onClose") all the close operations happened here. 
+   2. Callback queues - Keeps the callbacks like timeouts, api calls, file operations. using the phases.
+   3. Thread pool - 
+
+
