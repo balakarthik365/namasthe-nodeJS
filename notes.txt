@@ -175,12 +175,16 @@ In libuv - we have an
          EL checks the V8 callstack and send the callback queue operations to executes, once the stack is free and main thread is not occupied.
       This EL has phases like 
          process.nextTick() and promise callbacks are checked first before each cycle.
+         If there is any nested nextTick the inner nextTick will executed before going to other phases.
          1. timer - setTimeouts and setIntervals executed in this phase. It proitizes times
          2. poll - I/O callbacks like fs, crypto, HTTP, Incoming connections, data all this call backs executed here. 
                   most of callbacks exeuted here
+                  event loop waits at a poll phase and wait for poll operations.
          3. check - setImmediate also takes a callback
          4. close - socket ("onClose") all the close operations happened here. 
    2. Callback queues - Keeps the callbacks like timeouts, api calls, file operations. using the phases.
    3. Thread pool - 
+Is Node JS single threaded or multi threaded?
+
 
 
