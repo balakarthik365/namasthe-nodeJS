@@ -168,6 +168,7 @@ Parsing:
 
 libuv and Event Loop:
 In libuv - we have an 
+Tick - One full cycle is known as tick of event loop.
    1. Event loop -
          Usually async tasks are offloaded to libuv. Async and non blocking I/O can be done using the libuv.
          Eventloop is available in libuv - 
@@ -183,8 +184,64 @@ In libuv - we have an
          3. check - setImmediate also takes a callback
          4. close - socket ("onClose") all the close operations happened here. 
    2. Callback queues - Keeps the callbacks like timeouts, api calls, file operations. using the phases.
-   3. Thread pool - 
+   3. Thread pool - Libuv has a threadpool(4 threads by default, we can change the threadpool size process.env.UV_THREADPOOL_SIZE = 8). the thread is occupied untill the operations are handled with it.
+                    We can block the threads. once all are blocked next operations waits until some thread is free.
+                    ex: for fs operations, for dns lookup, for crypto(pbkhf2), sometimes based on user specified inputs.
+------------------------------------------------------------------------
+09-03-2026
 Is Node JS single threaded or multi threaded?
+Node Js is a single threaded language with synchronous code, and it is multi threaded when using UV_THREAD_POOL when asynchronous code is offloaded to the libUV.
+
+Using epoll or kqueue or I/O Completion Ports (IOCP) this will handle API calls instead of blocking threads. 
+
+
+Creating a server in Node JS - 
+Server: First understand if it refer to a HW or SW.
+        Requests are send to server and server responds
+        Simply a SW server is installed in HW server to run application and that speaks with HW server for requests and responses.
+        We can use our self systems also the servers
+        AWS does all the work for us.
+        We use NODE to create a server. A HTTP server.
+        We have different types of servers. HTTP(hyper text transfer protocol), FTP(File transfer protocol), & SMTP(Simple mail transfer protocol)
+Every client and server has an IP address. Now, if client want to access the file in server he need to communicate with request and gets the response.
+TCP/IP: Protocals are set of rules.
+when we type in URL. it will hit DNS server, then a request is sent to server and  server will provide the response.
+Server can also talk to other servers.
+can we create multiple HTTP servers?
+yes, and client will communicate with servers with the help of port. now this port will serve the client based on the requests send to individual servers.
+
+Web-sockets: It is a socket, that stays for longer time and not closed manually. It has some limits.
+
+when you make an API call it uses sockets.
+
+Node JS has built in modules. HTTP module is one of them. using this module we can create a server.
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+  if (req.url === "/getSecretData") {
+    res.end("This is no secret data");
+  }
+  res.end("Hello world");
+});
+
+server.listen(3000);
+
+-----------------------------------------------------------------------
+10-03-2026
+Database - The database is the organized collection of data.
+DBMS - The software that interacts with users, application and the database itself to capture and analyze the data.
+Types of DB:
+Relational DB - mySql, postgresQL  //mostly used
+NoSql DB - mongo db  //mostly used
+iinMemory DB - redis
+Graph DB
+cloud DB - Amazon RDS
+
+EF Codd - codd's 12 rules.[0 - 12]. if DB follows these 12 rules then it is RDBMS.
+
+
+
+
 
 
 
