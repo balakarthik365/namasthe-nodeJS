@@ -237,7 +237,58 @@ iinMemory DB - redis
 Graph DB
 cloud DB - Amazon RDS
 
-EF Codd - codd's 12 rules.[0 - 12]. if DB follows these 12 rules then it is RDBMS.
+EF Codd - codd's 12 rules.[0 - 12]. if DB follows these 12 rules then it is RDB.
+
+Michale Widneius - MySQL, MaxDB, MariaDB developed by michale. These were named after his daughters.
+
+Sunmicro systems aquired the MySQL later and then later Oracle took the handover of MySQL.
+
+SQL - Structured Query Language.
+To add, remove or manipulate the data we use the queries.
+
+NoSQL - MangoDB(Not only SQL)
+There are some types of NoSQL
+1. Document DB
+2. Key value DB
+3. Graph DB
+4. Wide Column DB
+5. Multi model DB
+mongoDB uses document DB, and was created in 2009. at the time NODE JS also created
+MongoDB goes easily with JSON and JS objects. It is very flexible.
+Was created by 10gen. word Mango derived from Humangous.
+Later, 10gen company changed there name as MongoDB Inc.
+built using all languages. like c++, python, JS and many more
+
+RDBMS vs NoSQL
+RDBMS - 
+Data is stored in form of tables.
+Forms relations using keys and joins
+Stored structured data
+has a fixed schema
+Always uses SQL
+Tough for horizontal scaling
+Reads heavy apps, transaction work loads
+Ex: Bank apps
+NoSQL - 
+Data is stored in form of documents(JSON type). It has collection and documents.
+No normalization or joins are required
+Stores unstructure data
+has a dynamic schema or flexible schema
+Used MongoDB(MQL), Neo4J(cypher language)
+Easy to scale horizontally
+Real time, BigData, dstributed computing
+Ex: Real time analysis, social media.
+
+
+MongoDB is popular for documents.
+
+Creating the MangoDB
+ MongoDb creates the id automatically
+---------------------------------------------------------------------------------------------
+12-03-2026
+Project:
+Dev Tinder
+
 
 
 
